@@ -18,9 +18,9 @@ function string_to_color(str, options) {
     };
 
     // Change the darkness or lightness
-    this.shade = function(color, percent) {
+    this.shade = function(color, prc) {
         var num = parseInt(color, 16),
-            amt = Math.round(2.55 * percent),
+            amt = Math.round(2.55 * prc),
             R = (num >> 16) + amt,
             G = (num >> 8 & 0x00FF) + amt,
             B = (num & 0x0000FF) + amt;
