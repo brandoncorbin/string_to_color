@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>String to Color</title>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js"></script>
+	<script src="string_to_color.js"></script>
+	<style>
+		body  {
+			font-family : 'Helvetica Neue', helvetica, arial, 'sans-serif';
+			padding : 20px;
+			text-align: center;
+		}
+		.output {
+			margin:20px auto;
+			max-width:500px;
+			padding:10px;
+			text-align: center;
+			font-weight:bold;
+			color:#FFF;
+			text-shadow:0px 1px 0px rgba(0,0,0,.3);
+		}
+		input[type=text] {
+			font-size:120%;
+			border-radius:4px;
+			padding:6px 10px;
+			border:solid 1px #EEE;
+		}
+
+		.tags .tag {
+			display:inline-block;
+			font-size:11px;
+			font-weight:bold;
+			padding:4px 10px;
+			margin-right:10px;
+		}
+
+	</style>
+</head>
+<body>
+	
+	<input type="text" placeholder="Type anything here" />
+
+	<div class="output">
+		
+	</div>
+
+	<hr style="border:none; border-top:solid 1px #EEE; margin-bottom:10px;" />
+
+	<script>
+		$(function() { 
+			$('input[type=text]').keyup(function() { 
+				var color = '#'+string_to_color($(this).val());
+				$('.output').css('background-color', color).html($(this).val());
+			});
+
+		});
+	</script>
+</body>
+</html>
