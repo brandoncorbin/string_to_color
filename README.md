@@ -8,3 +8,5 @@ If you need to take an unknown string and generate a consistent color to associa
     var color = '#'+string_to_color('Some String');
  	alert(color);
 
+ See a live example at (http://icorbin.com/code/string_to_color/example.html)
+
