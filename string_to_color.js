@@ -8,14 +8,16 @@ website: http://icorbin.com
 
 function string_to_color(str, options) {
 
+    // Generate a Hash for the String
     this.hash = function(str) {
-        var hash = 0;
+        var h = 0;
         for (var i = 0; i < str.length; i++) {
-            hash = str.charCodeAt(i) + ((hash << 5) - hash);
+            h = str.charCodeAt(i) + ((h << 5) - h);
         }
-        return hash;
+        return h;
     };
 
+    // Change the darkness or lightness
     this.shade = function(color, percent) {
         var num = parseInt(color, 16),
             amt = Math.round(2.55 * percent),
@@ -28,7 +30,7 @@ function string_to_color(str, options) {
             .toString(16).slice(1);
 
     };
-
+    // Convert init to an RGBA
     this.int_to_rgba = function(i) {
         var color = ((i >> 24) & 0xFF).toString(16) +
             ((i >> 16) & 0xFF).toString(16) +
@@ -37,16 +39,6 @@ function string_to_color(str, options) {
         return color;
     };
 
-    this.rgba_to_hex = function(color) {
-        return '#' + ('000000' + (color & 0xFFFFFF).toString(16)).slice(-6);
-    };
-
-
-
-    var hash = this.hash(str);
-    var rgba = this.int_to_rgba(hash);
-    var shaded = this.shade(rgba, -10);
-
-    return shaded;
+    return this.shade(this.int_to_rgba(this.hash(str)), -10);
 
 }
