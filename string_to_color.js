@@ -9,10 +9,10 @@ website: http://icorbin.com
 function string_to_color(str, options) {
 
     // Generate a Hash for the String
-    this.hash = function(str) {
+    this.hash = function(word) {
         var h = 0;
-        for (var i = 0; i < str.length; i++) {
-            h = str.charCodeAt(i) + ((h << 5) - h);
+        for (var i = 0; i < word.length; i++) {
+            h = word.charCodeAt(i) + ((h << 5) - h);
         }
         return h;
     };
@@ -27,7 +27,8 @@ function string_to_color(str, options) {
         return (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
             (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
             (B < 255 ? B < 1 ? 0 : B : 255))
-            .toString(16).slice(1);
+            .toString(16)
+            .slice(1);
 
     };
     // Convert init to an RGBA
