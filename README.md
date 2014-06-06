@@ -3,7 +3,7 @@ String to Color
 
 Tiny library to generate the same nice hex color for a string in Javascript. 
 
-**Features** 
+###Features 
 
 - Sexy colors, not muddy browns and boring grays
 - Binary safe
