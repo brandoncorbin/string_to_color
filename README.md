@@ -23,6 +23,6 @@ I needed a way to generate a consistent NICE color for any given word to assign 
 
 http://icorbin.com/code/string_to_color/example.html
 
+### jQuery plugin
 
-
-
+If you're already using jQuery, you might want to use [jquery-string_to_color](https://github.com/erming/jquery-string_to_color)
