@@ -7,7 +7,7 @@ website: http://icorbin.com
 ********************************************************/
 
 function string_to_color(str, options) {
-
+    'use strict';
     // Generate a Hash for the String
     var hash = function(word) {
         var h = 0;
