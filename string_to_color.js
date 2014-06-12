@@ -9,7 +9,7 @@ website: http://icorbin.com
 function string_to_color(str, options) {
 
     // Generate a Hash for the String
-    this.hash = function(word) {
+    var hash = function(word) {
         var h = 0;
         for (var i = 0; i < word.length; i++) {
             h = word.charCodeAt(i) + ((h << 5) - h);
@@ -18,7 +18,7 @@ function string_to_color(str, options) {
     };
 
     // Change the darkness or lightness
-    this.shade = function(color, prc) {
+    var shade = function(color, prc) {
         var num = parseInt(color, 16),
             amt = Math.round(2.55 * prc),
             R = (num >> 16) + amt,
@@ -32,7 +32,7 @@ function string_to_color(str, options) {
 
     };
     // Convert init to an RGBA
-    this.int_to_rgba = function(i) {
+    var int_to_rgba = function(i) {
         var color = ((i >> 24) & 0xFF).toString(16) +
             ((i >> 16) & 0xFF).toString(16) +
             ((i >> 8) & 0xFF).toString(16) +
@@ -40,6 +40,6 @@ function string_to_color(str, options) {
         return color;
     };
 
-    return this.shade(this.int_to_rgba(this.hash(str)), -10);
+    return shade(int_to_rgba(hash(str)), -10);
 
 }
