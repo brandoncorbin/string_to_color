@@ -6,7 +6,7 @@ author: Brandon Corbin [code@icorbin.com]
 website: http://icorbin.com
 ********************************************************/
 
-function string_to_color(str, options) {
+function string_to_color(str) {
     'use strict';
     // Generate a Hash for the String
     var hash = function(word) {
