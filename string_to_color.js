@@ -6,8 +6,12 @@ author: Brandon Corbin [code@icorbin.com]
 website: http://icorbin.com
 ********************************************************/
 
-function string_to_color(str) {
+function string_to_color(str, prc) {
     'use strict';
+
+    // Check for optional lightness/darkness
+    var prc = typeof prc === 'number' ? prc : -10;
+
     // Generate a Hash for the String
     var hash = function(word) {
         var h = 0;
@@ -29,8 +33,8 @@ function string_to_color(str) {
             (B < 255 ? B < 1 ? 0 : B : 255))
             .toString(16)
             .slice(1);
-
     };
+
     // Convert init to an RGBA
     var int_to_rgba = function(i) {
         var color = ((i >> 24) & 0xFF).toString(16) +
@@ -40,6 +44,6 @@ function string_to_color(str) {
         return color;
     };
 
-    return shade(int_to_rgba(hash(str)), -10);
+    return shade(int_to_rgba(hash(str)), prc);
 
 }
