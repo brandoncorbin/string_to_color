@@ -18,7 +18,11 @@ I needed a way to generate a consistent NICE color for any given word to assign 
     var color = '#'+string_to_color('Some String');
     alert(color);
 
- 
+Optionally, you can pass a percentage to lighten/darken the shade. The default value is -10.
+
+    var lighterColor = '#'+string_to_color('Some String', 40);
+    alert(lighterColor);
+
 ###Demo 
 
 http://icorbin.com/code/string_to_color/example.html
