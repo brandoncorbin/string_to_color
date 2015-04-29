@@ -1,0 +1,23 @@
+{
+  "name": "str-to-color",
+  "version": "1.0.0",
+  "homepage": "http://icorbin.com",
+  "authors": [
+    "Brandon Corbin <code@icorbin.com>"
+  ],
+  "description": "Consistently generate the same color for a specific string.",
+  "main": "string_to_color.js",
+  "keywords": [
+    "color",
+    "rgb",
+    "string",
+    "hash",
+    "generator",
+    "javascript",
+    "js"
+  ],
+  "license": "Apache 2.0",
+  "ignore": [
+    "**/.*"
+  ]
+}
