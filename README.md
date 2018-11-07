@@ -1,3 +1,7 @@
+# DEAD PROJECT WARNING
+
+This project is no longer maintained, check out some of the forks. Or, I recommend string-to-color
+
 String to Color
 ===============
 
